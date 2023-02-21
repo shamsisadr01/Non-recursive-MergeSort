@@ -27,11 +27,11 @@ namespace ConsoleApp1
             stopwatch.Start();
 
 
-            array = Non_recursive_MergeSort(array);
+            array = Non_Recursive_MergeSort(array);
             //printArray(array);
 
             stopwatch.Stop();
-            Console.WriteLine("Elapsed Time is Custom Sort " + stopwatch.ElapsedMilliseconds + " ms ");
+            Console.WriteLine("Elapsed Time is Non-Recursive MergeSort " + stopwatch.ElapsedMilliseconds + " ms ");
 
             stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -85,7 +85,7 @@ namespace ConsoleApp1
 
 
 
-        private static int[] Non_recursive_MergeSort(int[] inArray)
+        private static int[] Non_Recursive_MergeSort(int[] inArray)
         {
 
             int step = 2;
@@ -240,3 +240,4 @@ namespace ConsoleApp1
 
 
 }
+
