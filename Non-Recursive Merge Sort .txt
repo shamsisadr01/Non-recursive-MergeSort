@@ -6,41 +6,41 @@ namespace ConsoleApp1
 {
     internal class Program
     {
-     
+
         static void Main(string[] args)
         {
 
-            int[] array = new int[1000];
+            int[] array = new int[1000000];
             int[] array1 = new int[array.Length];
 
-  
-           Random random = new Random();
-  
+
+            Random random = new Random();
+
             for (int i = 0; i < array.Length; i++)
             {
                 array[i] = random.Next(-array.Length, array.Length);
                 array1[i] = array[i];
             }
 
- 
+
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
-          
+
             array = Non_recursive_MergeSort(array);
             //printArray(array);
 
             stopwatch.Stop();
             Console.WriteLine("Elapsed Time is Custom Sort " + stopwatch.ElapsedMilliseconds + " ms ");
 
-             stopwatch = new Stopwatch();
-             stopwatch.Start();
-     
-            MergeSort(array1, 0, array1.Length - 1);
- 
-             stopwatch.Stop();
+            stopwatch = new Stopwatch();
+            stopwatch.Start();
 
-             Console.WriteLine("Elapsed Time is Merge Sort " + stopwatch.ElapsedMilliseconds + " ms " );
+            MergeSort(array1, 0, array1.Length - 1);
+
+            stopwatch.Stop();
+
+            Console.WriteLine("Elapsed Time is Merge Sort " + stopwatch.ElapsedMilliseconds + " ms ");
 
 
             //Test results
@@ -56,12 +56,12 @@ namespace ConsoleApp1
 
             Console.WriteLine("Test results : " + result);
 
-         
+
 
             Console.ReadLine();
         }
 
-   
+
         static void printArray(int[] arr)
         {
             int n = arr.Length;
@@ -127,10 +127,10 @@ namespace ConsoleApp1
             int mid = middle;
             while (start < middle && mid < end)
             {
-                if (array[start] < array[mid])
-                    arrayTemp[index] = array[start++];
+                if (inArray[start] < inArray[mid])
+                    outArray[index] = inArray[start++];
                 else
-                    arrayTemp[index] = array[mid++];
+                    outArray[index] = inArray[mid++];
 
                 index++;
             }
@@ -152,7 +152,7 @@ namespace ConsoleApp1
             }
 
         }
-      
+
 
         static void merge(int[] arr, int l, int m, int r)
         {
@@ -216,7 +216,7 @@ namespace ConsoleApp1
             }
         }
 
-    
+
         static void MergeSort(int[] arr, int l, int r)
         {
             if (l < r)
