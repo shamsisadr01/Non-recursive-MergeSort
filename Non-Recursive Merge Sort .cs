@@ -71,19 +71,6 @@ namespace ConsoleApp1
             Console.WriteLine(str);
         }
 
-        private static bool Sawp(int[] array, int start, int end)
-        {
-            if (array[start] > array[end])
-            {
-                int temp = array[start];
-                array[start] = array[end];
-                array[end] = temp;
-                return true;
-            }
-            return false;
-        }
-
-
 
         private static int[] Non_Recursive_MergeSort(int[] inArray)
         {
